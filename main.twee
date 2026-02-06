@@ -1,0 +1,27 @@
+:: StoryTitle
+Twine Dating Sim
+
+
+:: StoryData
+{
+  "ifid": "C2479CF5-BCA9-4718-8A26-7E75D526C07E",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Confession",
+  "zoom": 1
+}
+
+
+:: Confession {"position":"275,150"}
+Sam Roberts - I love you Y/N
+
+[[Positive1<-I love you too Papa!!!]] 
+[[Negative1<-I could never date chuzz like you!! Baka!!!]] 
+
+
+:: Negative1 {"position":"650,350","size":"100,100"}
+W-w-what!!!! I thought you loved me too!
+
+
+:: Positive1 {"position":"700,225","size":"100,100"}
+Let's get married and have 5 zillion babies!
