@@ -11,7 +11,6 @@ Who Stole My Heart?
   "zoom": 1
 }
 
-
 :: Confession {"position":"100,200"}
 Sam Roberts - I love you Y/N
 
@@ -19,13 +18,15 @@ Sam Roberts - I love you Y/N
 [[Negative1<-I could never date chuzz like you!! Baka!!!]] 
 
 :: Negative1 {"position":"225,275"}
+(set: $love to $love-1)
 W-w-what!!!! I thought you loved me too!
 
 [[End<-I-I'm sorry Sam-kun... I just don't feel the same way...]]
 
 :: Positive1 {"position":"225,125"}
+(set: $love to $love+1)
 Let's get married and have 5 zillion babies!
 [[End<-Yay!!! I love you so much Sam-kun!!!]]
 
 :: End {"position":"350,200"}
-The end. Thanks for playing!
+The end. Thanks for playing! You are at $love love points.
