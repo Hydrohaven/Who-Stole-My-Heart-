@@ -1,27 +1,31 @@
 :: StoryTitle
-Twine Dating Sim
+Who Stole My Heart?
 
 
 :: StoryData
 {
   "ifid": "C2479CF5-BCA9-4718-8A26-7E75D526C07E",
   "format": "Harlowe",
-  "format-version": "3.3.9",
+  "format-version": "3.3.1",
   "start": "Confession",
   "zoom": 1
 }
 
 
-:: Confession {"position":"275,150"}
+:: Confession {"position":"100,200"}
 Sam Roberts - I love you Y/N
 
 [[Positive1<-I love you too Papa!!!]] 
 [[Negative1<-I could never date chuzz like you!! Baka!!!]] 
 
-
-:: Negative1 {"position":"650,350","size":"100,100"}
+:: Negative1 {"position":"225,275"}
 W-w-what!!!! I thought you loved me too!
 
+[[End<-I-I'm sorry Sam-kun... I just don't feel the same way...]]
 
-:: Positive1 {"position":"700,225","size":"100,100"}
+:: Positive1 {"position":"225,125"}
 Let's get married and have 5 zillion babies!
+[[End<-Yay!!! I love you so much Sam-kun!!!]]
+
+:: End {"position":"350,200"}
+The end. Thanks for playing!
