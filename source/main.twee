@@ -7,15 +7,50 @@ Who Stole My Heart?
   "ifid": "C2479CF5-BCA9-4718-8A26-7E75D526C07E",
   "format": "Harlowe",
   "format-version": "3.3.1",
-  "start": "PlayerIntro",
+  "start": "IntroductionScreen",
   "zoom": 1
 }
 
-:: PlayerIntro {"position":"100,100","size":"100,100"}
-(set: $ramPoints to 0)
-(set: $rolexPoints to 0)
-(set: $readRamLetter to 0)
-(set: $readRolexLetter to 0)
+:: StoryStylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Sawarabi+Gothic&display=swap');
+
+tw-link {
+  line-height: 2;
+  color:rgb(53, 161, 224)
+}
+
+tw-link:hover {
+  color:rgb(152, 212, 247);
+}
+
+tw-story {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Uncomment this when not debugging */
+/* tw-sidebar { display: none; } */
+
+
+.introduction-screen {
+  text-align: center;
+  margin-top: 100px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+:: IntroductionScreen
+<div class="introduction-screen">
+  <h1>Who Stole My Heart!?</h1>
+  <h2 style="margin-bottom: 0;">[[Start Game->PlayerIntro]]</h2>
+  <!-- <h4 style="margin-top: 0; color: orange">[[Debug Mode->PlayerIntroDebug]]</h4> -->
+</div>
+
+<div style="line-height: 0 !important;">
+  (set: $ramPoints to 0)
+  (set: $rolexPoints to 0)
+  (set: $readRamLetter to 0)
+  (set: $readRolexLetter to 0)
+</div>
+:: PlayerIntro [reset] {"position":"100,100","size":"100,100"}
 Lina Nguyen turns to herself in the mirror, really. She's a highschool girl who's had better days.
 
 "Ugh. It's almost Valentine's Day and I have no one. Everyone's so couple-y and I'm just… here. I really want a Valentine this year!"
@@ -25,6 +60,9 @@ She sighs dramatically.
 "At least I already know everyone at school. Ram, Rolex… Maybe one of them will finally notice me?"
 
 [[Begin the day->RamClass1Start]]
+
+:: PlayerIntroDebug [debug]
+(display: "PlayerIntro")
 
 
 :: RamClass1Start {"position":"225,100","size":"100,100"}
