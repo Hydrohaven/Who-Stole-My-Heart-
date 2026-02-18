@@ -6,7 +6,7 @@ Who Stole My Heart?
 {
   "ifid": "C2479CF5-BCA9-4718-8A26-7E75D526C07E",
   "format": "Harlowe",
-  "format-version": "3.3.9",
+  "format-version": "3.3.1",
   "start": "PlayerIntro",
   "zoom": 1
 }
@@ -26,6 +26,7 @@ She sighs dramatically.
 
 [[Begin the day->RamClass1Start]]
 
+
 :: RamClass1Start {"position":"225,100","size":"100,100"}
 <i>2/11 — 1st Period (Homeroom)</i>
 
@@ -41,117 +42,28 @@ The teacher hands everyone their test results. Ram finishes the announcement, go
 
 Ram is standing at your desk with a warm smile. "Do you want me to tutor you? How does this weekend sound?"
 
-[[I would love your help! Thanks Ram!->RamClass1P1P2]]
-[[No! Do you think I'm stupid!??->RamClass1P1N2]]
+[[I would love your help! Thanks Ram!->RamClass1P2]]
+[[No! Do you think I'm stupid!?->RamClass1N2]]
 
-:: RamClass1P1P2 {"position":"475,100","size":"100,100"}
+:: RamClass1P2 {"position":"475,100","size":"100,100"}
 (set: $ramPoints to (min: 5, $ramPoints + 1))
-"I would love your help!"
-
 Ram's face lights up. "Really? Then… wanna study together on the weekend? Just us?"
 
 He's very happy. Your heart does a little skip.
 
 [[Continue to 2nd period->RamClass2Start]]
 
-:: RamClass1P1N2 {"position":"600,100","size":"100,100"}
-"No! Do you think I'm stupid!?"
-
+:: RamClass1N2 {"position":"600,100","size":"100,100"}
 Ram's smile fades. "Oh—no, I didn't mean—I'm sorry, Lina." He looks sad and apologizes. He's mopey the rest of first period.
 
 [[Continue to 2nd period->RamClass2Start]]
 
-:: RamClass1N1N2 {"position":"850,100","size":"100,100"}
-"No! Do you think I'm stupid!?"
-
-Ram frowns. "I'm sorry, I didn't mean it like that." He's sad and mopey the rest of first period.
-
-[[Continue to 2nd period->RamClass2Start]]
-
-
-:: RamClass1N1P2 {"position":"725,100","size":"100,100"}
-(set: $ramPoints to (min: 5, $ramPoints + 1))
-"I would love your help!"
-
-Ram perks up. "Then wanna study on the weekend? Just us?" He's happy you said yes.
-
-[[Continue to 2nd period->RamClass2Start]]
-
-:: RamClass2EndN5 {"position":"725,225","size":"100,100"}
-*Slap his hand* "I can pick up my own pencil!" Ram frowns.
-
-The lunch bell rings.
-
-[[Go to lunch->RolexLunchStart]]
-
-
-:: RamClass2EndP5 {"position":"600,225","size":"100,100"}
-(set: $ramPoints to (min: 5, $ramPoints + 1))
-OMG he touched my hand! "Aww thank you so much Ram, you're so sweet!"
-
-The lunch bell rings.
-
-[[Go to lunch->RolexLunchStart]]
-
-
-:: RamClass2N3 {"position":"1225,100","size":"100,100"}
-*Angry* "Why did you wake me up!? I was having a nice dream!"
-<!-- TODO: Add apology -->
-
-Ram asks if you got any sleep last night. Lina says she didn't—she was thinking about being single. Ram laughs. "Don't worry, I know you'll be someone's Valentine!" He blushes and gazes into your eyes.
-
-[["Aww thanks, you're so sweet Ram! I really hope so."->RamClass2N3P4]]
-[["True! I hope it's not you! Haha."->RamClass2N3N4]]
-
-
-:: RamClass2N3N4 {"position":"475,225","size":"100,100"}
-Class continues. Pencil drops. You both reach—hands touch!
-
-[[*Blushes* "Aww thank you Ram!"->RamClass2EndP5]]
-[[*Slap his hand* "I can pick up my own pencil!"->RamClass2EndN5]]
-
-
-:: RamClass2N3P4 {"position":"350,225","size":"100,100"}
-(set: $ramPoints to (min: 5, $ramPoints + 1))
-"Aww thanks, you're so sweet Ram! I really hope so."
-
-Class continues. You drop your pencil. You both reach—hands touch!
-
-[[*Blushes* "Aww thank you so much Ram!"->RamClass2EndP5]]
-[[*Slap his hand* "I can pick up my own pencil!"->RamClass2EndN5]]
-
-
-:: RamClass2P3 {"position":"1100,100","size":"100,100"}
-(set: $ramPoints to (min: 5, $ramPoints + 1))
-*Blushes* You act flustered "You too!" You both start laughing.
-
-Ram asks if you got any sleep last night, since you dozed off. Lina says she didn't—she was thinking about how she's so single and surrounded by tons of couples. Ram laughs. "Don't worry, I know you'll be someone's Valentine!" He blushes.
-
-[["Aww thanks, you're so sweet Ram! I really hope so."->RamClass2P3P4]]
-[["True! I hope it's not you! Haha."->RamClass2P3N4]]
-
-
-:: RamClass2P3N4 {"position":"225,225","size":"100,100"}
-Class continues. You drop your pencil between your desk and Ram's. You both reach down—your hands touch!
-
-[[*Blushes* "Aww thank you so much Ram, you're so sweet!"->RamClass2EndP5]]
-[[*Slap his hand* "I can pick up my own pencil!"->RamClass2EndN5]]
-
-
-:: RamClass2P3P4 {"position":"100,225","size":"100,100"}
-(set: $ramPoints to (min: 5, $ramPoints + 1))
-"Aww thanks, you're so sweet Ram! I really hope so."
-
-Class continues. You drop your pencil between your desk and Ram's. You both reach down at the same time—your hands touch!
-
-[[*Blushes* Inner monologue: 'OMG he touched my hand!' "Aww thank you so much Ram, you're so sweet!"->RamClass2EndP5]]
-[[*Slap his hand* "I can pick up my own pencil!"->RamClass2EndN5]]
 
 
 :: RamClass2Start {"position":"975,100","size":"100,100"}
 <i>2/11 — 2nd Period</i>
 
-Lina's dozing off during class—she's so bored. Suddenly Ram nudges her to wake up.
+Lina's dozing off during class, she's so bored. Suddenly Ram nudges her to wake up.
 
 "You looked really cute while sleeping," he says quietly.
 
@@ -160,143 +72,53 @@ Lina wakes up, surprised.
 [[*Blushes* Acts flustered and says "You too!" accidently->RamClass2P3]]
 [[*Angry* "Why did you wake me up!? I was having a nice dream!"->RamClass2N3]]
 
+:: RamClass2P3 {"position":"1100,100","size":"100,100"}
+(set: $ramPoints to (min: 5, $ramPoints + 1))
+You both start laughing.
 
-:: RolexHallwayEndN5 {"position":"225,475","size":"100,100"}
-*Shake off his hand and run to your friends.* Lina and her friends enter class together and sit with each other. Rolex sulks.
+Ram asks if you got any sleep last night, since you dozed off. Lina says she didn't—she was thinking about how she's so single and surrounded by tons of couples. Ram laughs. "Don't worry, I know you'll be someone's Valentine!" He blushes.
 
-The rest of the day flies by. And before you know it, it's the day before Valentine's.
+[["Aww thanks, you're so sweet Ram! I really hope so."->RamClass2P3P4]]
+[["True! I hope it's not you! Haha."->RamClass2P3N4]]
 
-[[Open your locker->LockerStart]]
+:: RamClass2N3 {"position":"1225,100","size":"100,100"}
+Oh... I'm sorry Lina, I didn't mean to wake you up.
 
+Ram asks if you got any sleep last night. Lina says she didn't—she was thinking about being single. Ram laughs. "Don't worry, I know you'll be someone's Valentine!" He blushes and gazes into your eyes.
 
-:: RolexHallwayEndP5 {"position":"100,475","size":"100,100"}
-(set: $rolexPoints to (min: 5, $rolexPoints + 1))
-"You guys go on ahead without me!" You signal to your friends—just this once. Rolex and Lina enter class together and sit with each other.
+[["Aww thanks, you're so sweet Ram! I really hope so."->RamClass2P3P4]]
+[["True! I hope it's not you! Haha."->RamClass2P3N4]]
 
-The rest of the day flies by. And before you know it, it's the day before Valentine's.
+:: RamClass2P3P4 {"position":"100,225","size":"100,100"}
+(set: $ramPoints to (min: 5, $ramPoints + 1))
+Class continues. 
 
-[[Open your locker->LockerStart]]
+You drop your pencil between your desk and Ram's. You both reach down at the same time—your hands touch!
 
+[[*Blushes* Inner monologue: 'OMG he touched my hand!' "Aww thank you so much Ram, you're so sweet!"->RamClass2EndP5]]
+[[*Slap his hand* "I can pick up my own pencil!"->RamClass2EndN5]]
 
-:: RolexHallwayN3 {"position":"725,350","size":"100,100"}
-*Scoffs* "Why don't you do this to one of your other girls!"
+:: RamClass2P3N4 {"position":"225,225","size":"100,100"}
+Class continues. 
 
-"This can't wait. I only have one girl in mind for Valentine's, Lina. And you know her really well."
+You drop your pencil between your desk and Ram's. You both reach down at the same time—your hands touch!
 
-[["I better not see you with someone else then." *giggles*->RolexHallwayN3P4]]
-[["Leave me alone. That girl better not be me." *hmph!*->RolexHallwayN3N4]]
+[[*Blushes* "Aww thank you so much Ram, you're so sweet!"->RamClass2EndP5]]
+[[*Slap his hand* "I can pick up my own pencil!"->RamClass2EndN5]]
 
+:: RamClass2EndP5 {"position":"600,225","size":"100,100"}
+(set: $ramPoints to (min: 5, $ramPoints + 1))
+The lunch bell rings.
 
-:: RolexHallwayN3N4 {"position":"1225,350","size":"100,100"}
-"Leave me alone. That girl better not be me." *hmph!*
+[[Go to lunch->RolexLunchStart]]
 
-Lina's friend calls her over. Rolex grabs her hand and snarls. "No. She's with me."
+:: RamClass2EndN5 {"position":"725,225","size":"100,100"}
+The lunch bell rings.
 
-[["You guys go on ahead without me!"->RolexHallwayEndP5]]
-[[*Shakes off his hand and runs to her friends*->RolexHallwayEndN5]]
-
-
-:: RolexHallwayN3P4 {"position":"1100,350","size":"100,100"}
-(set: $rolexPoints to (min: 5, $rolexPoints + 1))
-"I better not see you with someone else then." *giggles*
-
-Lina's friend calls her over. Rolex grabs her hand and snarls. "No. She's with me."
-
-[["You guys go on ahead without me!"->RolexHallwayEndP5]]
-[[*Shakes off his hand and runs to her friends*->RolexHallwayEndN5]]
-
-
-:: RolexHallwayP3 {"position":"600,350","size":"100,100"}
-(set: $rolexPoints to (min: 5, $rolexPoints + 1))
-*Blushes* "Noo Rolex, let's talk later! We have class in a bit! And don't you have other girls you wanna take?"
-
-"This can't wait! I only have one girl in mind for Valentine's, Lina. And you know her really well."
-
-[["I better not see you with someone else then." *giggles*->RolexHallwayP3P4]]
-[["Leave me alone. That girl better not be me." *hmph!*->RolexHallwayP3N4]]
+[[Go to lunch->RolexLunchStart]]
 
 
-:: RolexHallwayP3N4 {"position":"975,350","size":"100,100"}
-"Leave me alone. That girl better not be me." *hmph!*
 
-Lina's friend calls her over. Rolex grabs her hand. "No. She's with me." He snarls.
-
-[["You guys go on ahead without me!" *signals just this once*->RolexHallwayEndP5]]
-[[*Shakes off his hand and runs to her friends*->RolexHallwayEndN5]]
-
-
-:: RolexHallwayP3P4 {"position":"850,350","size":"100,100"}
-(set: $rolexPoints to (min: 5, $rolexPoints + 1))
-"I better not see you with someone else then." *giggles*
-
-Lina's friend sees her from down the hall and calls her over. Rolex grabs her hand. "No. She's with me." He snarls.
-
-[["You guys go on ahead without me!" *signals just this once*->RolexHallwayEndP5]]
-[[*Shakes off his hand and runs to her friends*->RolexHallwayEndN5]]
-
-
-:: RolexHallwayStart {"position":"475,350","size":"100,100"}
-<i>2/11 — Hallway → 3rd Period</i>
-
-Lina is walking to class with Rolex when suddenly—he kabedons her! He's got her against the wall. Your face heats up.
-
-"You busy on the 14th? I can take you anywhere you want."
-
-[[*Blushes* "Noo Rolex, let's talk later! We have class in a bit! And don't you have other girls you wanna take?"->RolexHallwayP3]]
-[[*Scoffs* "Why don't you do this to one of your other girls!"->RolexHallwayN3]]
-
-
-:: RolexLunchN1 {"position":"1100,225","size":"100,100"}
-*Scooches away* "Hi Rolex, what do you want?"
-
-"You made this? You'd make an amazing wife." He leans over. "Lemme try some." He's eyeing your octopus sausage.
-
-[[*Feed him, say ahhh*->RolexLunchN1P2]]
-[[*Slap him* Get your own food Rolex!->RolexLunchN1N2]]
-
-
-:: RolexLunchN1N2 {"position":"350,350","size":"100,100"}
-*Slap him.* "Get your own food!" He whimpers and eats his own food.
-
-The bell rings and lunch is over.
-
-[[Head to 3rd period->RolexHallwayStart]]
-
-
-:: RolexLunchN1P2 {"position":"225,350","size":"100,100"}
-(set: $rolexPoints to (min: 5, $rolexPoints + 1))
-*You feed him.* He grins. You finish your meal together.
-
-The bell rings and lunch is over.
-
-[[Head to 3rd period->RolexHallwayStart]]
-
-
-:: RolexLunchP1 {"position":"975,225","size":"100,100"}
-(set: $rolexPoints to (min: 5, $rolexPoints + 1))
-Heyy Rolex. *blushes*
-
-"You made this? You'd make an amazing wife." He leans over. "Lemme try some." He's eyeing your octopus sausage.
-
-[[*Feed him and prompt him to say ahhh*->RolexLunchP1P2]]
-[[*Slap him in the face* Get your own food Rolex!->RolexLunchP1N2]]
-
-
-:: RolexLunchP1N2 {"position":"100,350","size":"100,100"}
-*Slap him in the face* "Get your own food Rolex!" He whimpers like a little puppy and continues to eat his own food.
-
-The bell rings and lunch is over.
-
-[[Head to 3rd period->RolexHallwayStart]]
-
-
-:: RolexLunchP1P2 {"position":"1225,225","size":"100,100"}
-(set: $rolexPoints to (min: 5, $rolexPoints + 1))
-*You feed him and prompt him to say ahhh* He grins and eats it. 
-
-You continue to finish your meal together, then the bell rings and lunch is over. Everyone heads to 3rd period.
-
-[[Head to 3rd period->RolexHallwayStart]]
 
 
 :: RolexLunchStart {"position":"850,225","size":"100,100"}
@@ -311,16 +133,96 @@ Rolex pulls up and sits next to Lina out of nowhere. She's surprised. He's very 
 [[Heyy Rolex *blushes*->RolexLunchP1]]
 [[*Scooches away* Hi Rolex, what do you want?->RolexLunchN1]]
 
-:: LockerHasLetters {"position":"475,475","size":"100,100"}
-You're holding your letter(s). Read them, then decide who you want to spend Valentine's with.
+:: RolexLunchP1 {"position":"975,225","size":"100,100"}
+(set: $rolexPoints to (min: 5, $rolexPoints + 1))
+"You made this? You'd make an amazing wife." He leans over. "Lemme try some." He's eyeing your octopus sausage.
 
-(if: $ramPoints >= 3)[
-[[View Ram's letter->ViewRamLetter]](if: $readRamLetter > 0)[
-  [[Continue to Valentine's with Ram->EpilogueRam]]
-]](if: $rolexPoints >= 3)[ <!-- Weird spacing cuz twee spacing is odd -->
-[[View Rolex's letter->ViewRolexLetter]] (if: $readRolexLetter > 0)[
-  [[Continue to Valentine's with Rolex->EpilogueRolex]]
-]]
+[[*Feed him and prompt him to say ahhh*->RolexLunchP1P2]]
+[[*Slap him in the face* Get your own food Rolex!->RolexLunchP1N2]]
+
+:: RolexLunchN1 {"position":"1100,225","size":"100,100"}
+"You made this? You'd make an amazing wife." He leans over. "Lemme try some." He's eyeing your octopus sausage.
+
+[[*Feed him and prompt him to say ahhh*->RolexLunchP1P2]]
+[[*Slap him* Get your own food Rolex!->RolexLunchP1N2]]
+
+:: RolexLunchP1P2 {"position":"225,350","size":"100,100"}
+(set: $rolexPoints to (min: 5, $rolexPoints + 1))
+*You feed him.* He grins. You finish your meal together.
+
+You continue to finish your meal together, then the bell rings and lunch is over. Everyone heads to 3rd period.
+
+[[Head to 3rd period->RolexHallwayStart]]
+
+:: RolexLunchP1N2 {"position":"100,350","size":"100,100"}
+*Slap him in the face* "Get your own food Rolex!" 
+
+He whimpers like a little puppy and continues to eat his own food.
+
+The bell rings and lunch is over.
+
+[[Head to 3rd period->RolexHallwayStart]]
+
+
+:: RolexHallwayStart {"position":"475,350","size":"100,100"}
+<i>2/11 — Hallway → 3rd Period</i>
+
+Lina is walking to class with Rolex when suddenly—he kabedons her! He's got her against the wall. Your face heats up.
+
+"You busy on the 14th? I can take you anywhere you want."
+
+[[*Blushes* "Noo Rolex, let's talk later! We have class in a bit! And don't you have other girls you wanna take?"->RolexHallwayP3]]
+[[*Scoffs* "Why don't you do this to one of your other girls!"->RolexHallwayN3]]
+
+:: RolexHallwayP3 {"position":"600,350","size":"100,100"}
+(set: $rolexPoints to (min: 5, $rolexPoints + 1))
+*Blushes* "Noo Rolex, let's talk later! We have class in a bit! And don't you have other girls you wanna take?"
+
+"This can't wait! I only have one girl in mind for Valentine's, Lina. And you know her really well."
+
+[["I better not see you with someone else then." *giggles*->RolexHallwayP3P4]]
+[["Leave me alone. That girl better not be me." *hmph!*->RolexHallwayP3N4]]
+
+:: RolexHallwayN3 {"position":"725,350","size":"100,100"}
+*Scoffs* "Why don't you do this to one of your other girls!"
+
+"This can't wait. I only have one girl in mind for Valentine's, Lina. And you know her really well."
+
+[["I better not see you with someone else then." *giggles*->RolexHallwayP3P4]]
+[["Leave me alone. That girl better not be me." *hmph!*->RolexHallwayP3N4]]
+
+:: RolexHallwayP3P4 {"position":"850,350","size":"100,100"}
+(set: $rolexPoints to (min: 5, $rolexPoints + 1))
+"I better not see you with someone else then." *giggles*
+
+Lina's friend sees her from down the hall and calls her over. Rolex grabs her hand. "No. She's with me." He snarls.
+
+[["You guys go on ahead without me!" *signals just this once*->RolexHallwayEndP5]]
+[[*Shakes off his hand and runs to her friends*->RolexHallwayEndN5]]
+
+:: RolexHallwayP3N4 {"position":"975,350","size":"100,100"}
+"Leave me alone. That girl better not be me." *hmph!*
+
+Lina's friend calls her over. Rolex grabs her hand. "No. She's with me." He snarls.
+
+[["You guys go on ahead without me!" *signals just this once*->RolexHallwayEndP5]]
+[[*Shakes off his hand and runs to her friends*->RolexHallwayEndN5]]
+
+
+:: RolexHallwayEndP5 {"position":"100,475","size":"100,100"}
+(set: $rolexPoints to (min: 5, $rolexPoints + 1))
+"You guys go on ahead without me!" You signal to your friends—just this once. Rolex and Lina enter class together and sit with each other.
+
+The rest of the day flies by. And before you know it, it's the day before Valentine's.
+
+[[Open your locker->LockerStart]]
+
+:: RolexHallwayEndN5 {"position":"225,475","size":"100,100"}
+*Shake off his hand and run to your friends.* Lina and her friends enter class together and sit with each other. Rolex sulks.
+
+The rest of the day flies by. And before you know it, it's the day before Valentine's.
+
+[[Open your locker->LockerStart]]
 
 
 :: LockerStart {"position":"350,475","size":"100,100"}
@@ -333,6 +235,18 @@ You open your locker and find (if: $ramPoints >= 3 and $rolexPoints >= 3)[two lo
 ](else:)[
 [[Valentine's Day, alone... Once again...->EpilogueAlone]]
 ]
+
+:: LockerHasLetters {"position":"475,475","size":"100,100"}
+You're holding your letter(s). Read them, then decide who you want to spend Valentine's with.
+
+(if: $ramPoints >= 3)[
+[[View Ram's letter->ViewRamLetter]](if: $readRamLetter > 0)[
+  [[Continue to Valentine's with Ram->EpilogueRam]]
+]](if: $rolexPoints >= 3)[ <!-- Weird spacing cuz twee spacing is odd -->
+[[View Rolex's letter->ViewRolexLetter]] (if: $readRolexLetter > 0)[
+  [[Continue to Valentine's with Rolex->EpilogueRolex]]
+]]
+
 
 :: ViewRamLetter {"position":"600,475","size":"100,100"}
 (set: $readRamLetter to 1)
@@ -362,7 +276,7 @@ You open your locker and find (if: $ramPoints >= 3 and $rolexPoints >= 3)[two lo
 ]
 
 :: EpilogueRam {"position":"850,475","size":"100,100"}
-<i>Valentine's Day!</i>
+<i>2/14 - Valentine's Day!</i>
 
 You chose to spend time with Ram! (More content coming soon.)
 
@@ -370,14 +284,14 @@ You chose to spend time with Ram! (More content coming soon.)
 
 
 :: EpilogueRolex {"position":"975,475","size":"100,100"}
-<i>Valentine's Day!</i>
+<i>2/14 - Valentine's Day!</i>
 
 You chose to spend time with Rolex! (More content coming soon.)
 
 [[Play again->PlayerIntro]]
 
 :: EpilogueAlone {"position":"1100,475","size":"100,100"}
-<i>Valentine's Day.</i>
+<i>2/14 - Valentine's Day...</i>
 
 You spend Valentine's by yourself. No letters, no dates. Just you and a tub of ice cream. (Or maybe next playthrough you'll be sweeter to someone!)
 
