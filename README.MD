@@ -13,3 +13,11 @@ TBD
 
 ## Resources
 - [Tweego Installation](https://joshuagrams.github.io/tiny-qbn/doc/tweego.html)
+
+## Reason
+A simple Twine project made for GDIM 131: Data Analytics for Interactive Media
+
+## Contributors
+Joshua Sullivan\
+Justin Le\
+Lina Nguyen
