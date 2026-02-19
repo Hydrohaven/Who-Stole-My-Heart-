@@ -41,7 +41,25 @@ tw-icon[title="Undo"], tw-icon[title="Redo"] {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+:: Story JavaScript [script]
+window.GOOGLE_SHEET_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx7ULEbYtLKYXYE3wqjScoWn5D9CSNWh-CTL0To59_T9p6FF5xL9SWiEV7oHDBwJVLx/exec';
+
+window.sendToSheet = function(payload) {
+  if (!window.GOOGLE_SHEET_WEB_APP_URL) return;
+  if (!payload.player_id || String(payload.player_id).trim() === '') {
+    window.__playerId = window.__playerId || Math.floor(1000000 + Math.random() * 9000000);
+    payload.player_id = window.__playerId;
+  }
+  fetch(window.GOOGLE_SHEET_WEB_APP_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(function() {});
+};
+
 :: IntroductionScreen
+(if: $statsInited is not 1)[(set: $statsInited to 1)(set: $playerId to (random: 1000000, 9999999))(set: $sessionStarts to 0)(set: $replayCount to 0)(set: $completionCount to 0)(set: $timesChoseRam to 0)(set: $timesChoseRolex to 0)(set: $timesAlone to 0)]
 <div class="introduction-screen">
   <h1>Who Stole My Heart!?</h1>
   <h2 style="margin-bottom: 0;">[[Start Game->PlayerIntro]]</h2>
@@ -55,6 +73,7 @@ tw-icon[title="Undo"], tw-icon[title="Redo"] {
   (set: $readRolexLetter to 0)
 </div>
 :: PlayerIntro [reset] {"position":"100,100","size":"100,100"}
+(set: $sessionStarts to $sessionStarts + 1)
 Lina Nguyen turns to herself in the mirror, really. She's a highschool girl who's had better days.
 
 "Ugh. It's almost Valentine's Day and I have no one. Everyone's so couple-y and I'm just… here. I really want a Valentine this year!"
@@ -76,10 +95,23 @@ Ram Soberts walks into the room. <i>Golden retriever energy, class president, te
 
 Ram makes the morning announcement—something about Valentine's Day coming up—and looks dead straight at Lina.
 
-[[*Blushes and giggles* Looks away all gushy->RamClass1Next]]
-[[Make a disgusted face->RamClass1Next]]
+[[*Blushes and giggles* Looks away all gushy->RamClass1P1]]
+[[Make a disgusted face->RamClass1N1]]
 
-:: RamClass1Next {"position":"350,100","size":"100,100"}
+:: RamClass1P1 {"position":"475,100","size":"100,100"}
+(set: $ramPoints to (min: 5, $ramPoints + 1))
+Ram smiles warmly at you.
+
+The teacher hands everyone their test results. Ram finishes the announcement, goes to Lina's desk, and asks her how the test was. He got a 100. Lina got a 40.
+
+Ram is standing at your desk with a warm smile. "Do you want me to tutor you? How does this weekend sound?"
+
+[[I would love your help! Thanks Ram!->RamClass1P2]]
+[[No! Do you think I'm stupid!?->RamClass1N2]]
+
+:: RamClass1N1 {"position":"600,100","size":"100,100"}
+Ram is taken aback and whimpers.
+
 The teacher hands everyone their test results. Ram finishes the announcement, goes to Lina's desk, and asks her how the test was. He got a 100. Lina got a 40.
 
 Ram is standing at your desk with a warm smile. "Do you want me to tutor you? How does this weekend sound?"
@@ -319,22 +351,69 @@ You're holding your letter(s). Read them, then decide who you want to spend Vale
 
 
 :: EpilogueRam {"position":"850,475","size":"100,100"}
+(set: $timesChoseRam to $timesChoseRam + 1)(set: $completionCount to $completionCount + 1)(set: $lastPassage to "EpilogueRam")(set: $choseThisRun to "ram")
+(display: "SendData")
 <i>2/14 - Valentine's Day!</i>
 
 You chose to spend time with Ram! (More content coming soon.)
 
-[[Play again->IntroductionScreen]]
+[[Play again->PlayAgain]]
 
 :: EpilogueRolex {"position":"975,475","size":"100,100"}
+(set: $timesChoseRolex to $timesChoseRolex + 1)(set: $completionCount to $completionCount + 1)(set: $lastPassage to "EpilogueRolex")(set: $choseThisRun to "rolex")
+(display: "SendData")
 <i>2/14 - Valentine's Day!</i>
 
 You chose to spend time with Rolex! (More content coming soon.)
 
-[[Play again->IntroductionScreen]]
+[[Play again->PlayAgain]]
 
 :: EpilogueAlone {"position":"1100,475","size":"100,100"}
+(set: $timesAlone to $timesAlone + 1)(set: $completionCount to $completionCount + 1)(set: $lastPassage to "EpilogueAlone")(set: $choseThisRun to "alone")
+(display: "SendData")
 <i>2/14 - Valentine's Day...</i>
 
 You spend Valentine's by yourself. No letters, no dates. Just you and a tub of ice cream. (Or maybe next playthrough you'll be sweeter to someone!)
 
-[[Play again->IntroductionScreen]]
+[[Play again->PlayAgain]]
+
+:: PlayAgain
+(set: $replayCount to $replayCount + 1)
+[[Back to title->IntroductionScreen]]
+
+:: SendData
+<div id="analytics-payload" style="display:none">
+  <span id="payload-player-id">(print: $playerId)</span>
+  <span id="payload-ram-pts">(print: $ramPoints)</span>
+  <span id="payload-rolex-pts">(print: $rolexPoints)</span>
+  <span id="payload-total-pts">(print: $ramPoints + $rolexPoints)</span>
+  <span id="payload-times-ram">(print: $timesChoseRam)</span>
+  <span id="payload-times-rolex">(print: $timesChoseRolex)</span>
+  <span id="payload-times-alone">(print: $timesAlone)</span>
+  <span id="payload-replays">(print: $replayCount)</span>
+  <span id="payload-last-passage">(print: $lastPassage)</span>
+  <span id="payload-completions">(print: $completionCount)</span>
+  <span id="payload-session-starts">(print: $sessionStarts)</span>
+  <span id="payload-chose">(print: $choseThisRun)</span>
+</div>
+<script>
+(function(){
+  var root = document.getElementById('analytics-payload');
+  if (!root || typeof window.sendToSheet !== 'function') return;
+  function text(id) { var el = document.getElementById(id); return el ? el.textContent : ''; }
+  window.sendToSheet({
+    player_id: text('payload-player-id'),
+    ram_pts: text('payload-ram-pts'),
+    rolex_pts: text('payload-rolex-pts'),
+    total_pts: text('payload-total-pts'),
+    times_chose_ram: text('payload-times-ram'),
+    times_chose_rolex: text('payload-times-rolex'),
+    times_alone: text('payload-times-alone'),
+    replays: text('payload-replays'),
+    last_passage: text('payload-last-passage'),
+    completions: text('payload-completions'),
+    session_starts: text('payload-session-starts'),
+    chose_this_run: text('payload-chose')
+  });
+})();
+</script>
