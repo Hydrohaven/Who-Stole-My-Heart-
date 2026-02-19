@@ -27,6 +27,10 @@ tw-story {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+tw-icon[title="Undo"], tw-icon[title="Redo"] {
+  display: none;
+}
+
 /* Uncomment this when not debugging */
 /* tw-sidebar { display: none; } */
 
@@ -205,7 +209,7 @@ The bell rings and lunch is over.
 :: RolexHallwayStart {"position":"475,350","size":"100,100"}
 <i>2/11 — Hallway → 3rd Period</i>
 
-Lina is walking to class with Rolex when suddenly—he kabedons her! He's got her against the wall. Your face heats up.
+Lina is walking to class with Rolex when suddenly he pushes her against the wall. Your face heats up.
 
 "You busy on the 14th? I can take you anywhere you want."
 
@@ -313,24 +317,24 @@ You're holding your letter(s). Read them, then decide who you want to spend Vale
 [[Continue to Valentine's with Rolex->EpilogueRolex]]
 ]
 
+
 :: EpilogueRam {"position":"850,475","size":"100,100"}
 <i>2/14 - Valentine's Day!</i>
 
 You chose to spend time with Ram! (More content coming soon.)
 
-[[Play again->PlayerIntro]]
-
+[[Play again->IntroductionScreen]]
 
 :: EpilogueRolex {"position":"975,475","size":"100,100"}
 <i>2/14 - Valentine's Day!</i>
 
 You chose to spend time with Rolex! (More content coming soon.)
 
-[[Play again->PlayerIntro]]
+[[Play again->IntroductionScreen]]
 
 :: EpilogueAlone {"position":"1100,475","size":"100,100"}
 <i>2/14 - Valentine's Day...</i>
 
 You spend Valentine's by yourself. No letters, no dates. Just you and a tub of ice cream. (Or maybe next playthrough you'll be sweeter to someone!)
 
-[[Play again->PlayerIntro]]
+[[Play again->IntroductionScreen]]
