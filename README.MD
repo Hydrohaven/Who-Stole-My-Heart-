@@ -11,6 +11,9 @@ TBD
 6. Any subsequent changes you make after `Tasks: Run Tasks` should live update the game 
 7. Run `Twee3 Language Tools: Show Story Map` to see story map
 
+## Analytics (Google Sheet)
+The game can send one row of play data to a Google Sheet each time a player reaches an ending. See **[docs/google-sheet-analytics.md](docs/google-sheet-analytics.md)** for setup: create the sheet, add the Apps Script (`docs/Code.gs`), deploy as web app, then paste the URL into the **Story JavaScript** passage in `source/main.twee` (`GOOGLE_SHEET_WEB_APP_URL`).
+
 ## Resources
 - [Tweego Installation](https://joshuagrams.github.io/tiny-qbn/doc/tweego.html)
 
