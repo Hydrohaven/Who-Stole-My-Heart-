@@ -25,6 +25,14 @@ tw-link:hover {
 
 tw-story {
   font-family: 'Nunito Sans', sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 /* tw-icon[title="Undo"], tw-icon[title="Redo"] {
@@ -100,6 +108,8 @@ Ram smiles warmly at you.
 
 The teacher hands everyone their test results. Ram finishes the announcement, goes to Lina's desk, and asks her how the test was. He got a 100. Lina got a 40.
 
+<img src="img/bad_exam.png" alt="Bad Exam" style="width: 30%; height: 100%; object-fit: cover;">
+
 Ram is standing at your desk with a warm smile. "Do you want me to tutor you? How does this weekend sound?"
 
 [[I would love your help! Thanks Ram!->RamClass1P2]]
@@ -110,6 +120,8 @@ Ram is taken aback and whimpers.
 
 The teacher hands everyone their test results. Ram finishes the announcement, goes to Lina's desk, and asks her how the test was. He got a 100. Lina got a 40.
 
+<img src="img/dog_happy.png" alt="Happy Dog" style="width: 20%; height: 100%; object-fit: cover;">
+
 Ram is standing at your desk with a warm smile. "Do you want me to tutor you? How does this weekend sound?"
 
 [[I would love your help! Thanks Ram!->RamClass1P2]]
@@ -117,6 +129,8 @@ Ram is standing at your desk with a warm smile. "Do you want me to tutor you? Ho
 
 :: RamClass1P2 {"position":"475,100","size":"100,100"}
 (set: $ramPoints to (min: 5, $ramPoints + 1))
+<img src="img/dog_excited.png" alt="Excited Dog" style="width: 30%; height: 100%; object-fit: cover;">
+
 Ram's face lights up. "Really? Then… wanna study together on the weekend? Just us?"
 
 He's very happy. Your heart does a little skip.
@@ -124,6 +138,8 @@ He's very happy. Your heart does a little skip.
 [[Continue to 2nd period->RamClass2Start]]
 
 :: RamClass1N2 {"position":"600,100","size":"100,100"}
+<img src="img/dog_sad.png" alt="Sad Dog" style="width: 20%; height: 100%; object-fit: cover;">
+
 Ram's smile fades. "Oh—no, I didn't mean—I'm sorry, Lina." He looks sad and apologizes. He's mopey the rest of first period.
 
 [[Continue to 2nd period->RamClass2Start]]
@@ -132,6 +148,7 @@ Ram's smile fades. "Oh—no, I didn't mean—I'm sorry, Lina." He looks sad and 
 
 :: RamClass2Start {"position":"975,100","size":"100,100"}
 <i>2/11 — 2nd Period</i>
+<img src="img/lina_sleepy.png" alt="Sleepy Lina" style="width: 30%; height: 100%; object-fit: cover;">
 
 Lina's dozing off during class, she's so bored. Suddenly Ram nudges her to wake up.
 
@@ -164,6 +181,7 @@ Ram asks if you got any sleep last night. Lina says she didn't—she was thinkin
 Class continues. 
 
 You drop your pencil between your desk and Ram's. You both reach down at the same time—your hands touch!
+<img src="img/pencil.png" alt="Pencil" style="width: 30%; height: 100%; object-fit: cover;">
 
 [[*Blushes* Inner monologue: 'OMG he touched my hand!' "Aww thank you so much Ram, you're so sweet!"->RamClass2EndP5]]
 [[*Slap his hand* "I can pick up my own pencil!"->RamClass2EndN5]]
@@ -172,6 +190,8 @@ You drop your pencil between your desk and Ram's. You both reach down at the sam
 Class continues. 
 
 You drop your pencil between your desk and Ram's. You both reach down at the same time—your hands touch!
+<img src="img/pencil.png" alt="Pencil" style="width: 30%; height: 100%; object-fit: cover;">
+
 
 [[*Blushes* "Aww thank you so much Ram, you're so sweet!"->RamClass2EndP5]]
 [[*Slap his hand* "I can pick up my own pencil!"->RamClass2EndN5]]
@@ -196,6 +216,8 @@ The lunch bell rings.
 
 You head to the cafeteria and sit at a table outside in a more isolated spot. You open your packed lunch.
 
+<img src="img/bento_box.png" alt="Bento Box" style="width: 30%; height: 100%; object-fit: cover;">
+
 <i>This is Rolex Hornton. International student, doesn't get social cues, really attractive—all the girls fawn over him. A bit of a bad boy. Very rash. And he has a Rolex.</i>
 
 Rolex pulls up and sits next to Lina out of nowhere. She's surprised. He's very flirty. "You saved this spot for me?"
@@ -206,12 +228,14 @@ Rolex pulls up and sits next to Lina out of nowhere. She's surprised. He's very 
 :: RolexLunchP1 {"position":"975,225","size":"100,100"}
 (set: $rolexPoints to (min: 5, $rolexPoints + 1))
 "You made this? You'd make an amazing wife." He leans over. "Lemme try some." He's eyeing your octopus sausage.
+<img src="img/octopus_sausage.png" alt="Octopus Sausage" style="width: 20%; height: 70%; object-fit: cover;">
 
 [[*Feed him and prompt him to say ahhh*->RolexLunchP1P2]]
 [[*Slap him in the face* Get your own food Rolex!->RolexLunchP1N2]]
 
 :: RolexLunchN1 {"position":"1100,225","size":"100,100"}
 "You made this? You'd make an amazing wife." He leans over. "Lemme try some." He's eyeing your octopus sausage.
+<img src="img/octopus_sausage.png" alt="Octopus Sausage" style="width: 20%; height: 70%; object-fit: cover;">
 
 [[*Feed him and prompt him to say ahhh*->RolexLunchP1P2]]
 [[*Slap him* Get your own food Rolex!->RolexLunchP1N2]]
@@ -219,6 +243,8 @@ Rolex pulls up and sits next to Lina out of nowhere. She's surprised. He's very 
 :: RolexLunchP1P2 {"position":"225,350","size":"100,100"}
 (set: $rolexPoints to (min: 5, $rolexPoints + 1))
 *You feed him.* He grins. You finish your meal together.
+
+<img src="img/dog_excited.png" alt="Excited Dog" style="width: 20%; height: 100%; object-fit: cover;">
 
 You continue to finish your meal together, then the bell rings and lunch is over. Everyone heads to 3rd period.
 
@@ -229,6 +255,8 @@ You continue to finish your meal together, then the bell rings and lunch is over
 
 He whimpers like a little puppy and continues to eat his own food.
 
+<img src="img/dog_sad.png" alt="Sad Dog" style="width: 20%; height: 100%; object-fit: cover;">
+
 The bell rings and lunch is over.
 
 [[Head to 3rd period->RolexHallwayStart]]
@@ -238,6 +266,8 @@ The bell rings and lunch is over.
 <i>2/11 — Hallway → 3rd Period</i>
 
 Lina is walking to class with Rolex when suddenly he pushes her against the wall. Your face heats up.
+
+<img src="img/kabedon.png" alt="Kabedon" style="width: 30%; height: 100%; object-fit: cover;">
 
 "You busy on the 14th? I can take you anywhere you want."
 
@@ -299,6 +329,10 @@ The rest of the day flies by. And before you know it, it's the day before Valent
 <i>Day before Valentine's Day</i>
 
 You open your locker and find (if: $ramPoints >= 3 and $rolexPoints >= 3)[two love letters! One from Ram, one from Rolex.](else-if: $ramPoints >= 3)[one love letter—from Ram!](else-if: $rolexPoints >= 3)[one love letter—from Rolex!](else:)[zero love letters…]
+
+(if: $ramPoints >= 3 or $rolexPoints >= 3)[
+<img src="img/love_letter.png" alt="Love Letter" style="width: 30%; height: 100%; object-fit: cover;">
+]
 
 (if: $ramPoints >= 3 or $rolexPoints >= 3)[
 [[View your letters->LockerHasLetters]]
