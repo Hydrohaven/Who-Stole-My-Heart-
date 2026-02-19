@@ -129,7 +129,7 @@ Ram is standing at your desk with a warm smile. "Do you want me to tutor you? Ho
 
 :: RamClass1P2 {"position":"475,100","size":"100,100"}
 (set: $ramPoints to (min: 5, $ramPoints + 1))
-<img src="img/dog_excited.png" alt="Excited Dog" style="width: 30%; height: 100%; object-fit: cover;">
+<img src="img/dog_excited.png" alt="Excited Dog" style="width: 20%; height: 100%; object-fit: cover;">
 
 Ram's face lights up. "Really? Then… wanna study together on the weekend? Just us?"
 
@@ -218,7 +218,7 @@ You head to the cafeteria and sit at a table outside in a more isolated spot. Yo
 
 <img src="img/bento_box.png" alt="Bento Box" style="width: 30%; height: 100%; object-fit: cover;">
 
-<i>This is Rolex Hornton. International student, doesn't get social cues, really attractive—all the girls fawn over him. A bit of a bad boy. Very rash. And he has a Rolex.</i>
+<i>This is Rolex Hornton. International student, doesn't get social cues, really attractive. All the girls fawn over him. A bit of a bad boy. Very rash. And he has a Rolex.</i>
 
 Rolex pulls up and sits next to Lina out of nowhere. She's surprised. He's very flirty. "You saved this spot for me?"
 
