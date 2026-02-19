@@ -27,13 +27,9 @@ tw-story {
   font-family: 'Nunito Sans', sans-serif;
 }
 
-tw-icon[title="Undo"], tw-icon[title="Redo"] {
+/* tw-icon[title="Undo"], tw-icon[title="Redo"] {
   display: none;
-}
-
-/* Uncomment this when not debugging */
-/* tw-sidebar { display: none; } */
-
+} */
 
 .introduction-screen {
   text-align: center;
@@ -59,7 +55,7 @@ window.sendToSheet = function(payload) {
 };
 
 :: IntroductionScreen
-(if: $statsInited is not 1)[(set: $statsInited to 1)(set: $playerId to (random: 1000000, 9999999))(set: $sessionStarts to 0)(set: $replayCount to 0)(set: $completionCount to 0)(set: $timesChoseRam to 0)(set: $timesChoseRolex to 0)(set: $timesAlone to 0)]
+(if: $statsInited is not 1)[(set: $statsInited to 1)(set: $playerId to (random: 1000000, 9999999))(set: $sessionStarts to 0)(set: $replayCount to 0)(set: $completionCount to 0)(set: $timesChoseRam to 0)(set: $timesChoseRolex to 0)(set: $timesAlone to 0)](else:)[(set: $replayCount to $replayCount + 1)]
 <div class="introduction-screen">
   <h1>Who Stole My Heart!?</h1>
   <h2 style="margin-bottom: 0;">[[Start Game->PlayerIntro]]</h2>
@@ -351,35 +347,35 @@ You're holding your letter(s). Read them, then decide who you want to spend Vale
 
 
 :: EpilogueRam {"position":"850,475","size":"100,100"}
+<i>2/14 — Valentine's Day!</i>
+
+Ram picks you up with a packed basket and a blanket. "Just us," he says, and he means it.
+
+You have a picnic in the park, nothing fancy, but he remembered everything you like. Afterward he pulls out a box of Legos. "We never finished that set. Wanna do it today?" You build together until the pieces blur, then he drives you to the beach. You watch the sunset side by side. He doesn't fill the silence; he just smiles and bumps your shoulder. It's the kind of Valentine's you could've had a hundred times as friends, except this time he holds your hand and it feels like the start of something new.
+
+[[Play again->IntroductionScreen]]
 (set: $timesChoseRam to $timesChoseRam + 1)(set: $completionCount to $completionCount + 1)(set: $lastPassage to "EpilogueRam")(set: $choseThisRun to "ram")
 (display: "SendData")
-<i>2/14 - Valentine's Day!</i>
-
-You chose to spend time with Ram! (More content coming soon.)
-
-[[Play again->PlayAgain]]
 
 :: EpilogueRolex {"position":"975,475","size":"100,100"}
+<i>2/14 — Valentine's Day!</i>
+
+Rolex shows up with a bouquet, a small velvet box, and a smirk. "You're underdressed. We're fixing that."
+
+Dinner is at a place where the menu has no prices. He orders for both of you. Between courses he slides the box across the table, fine jewelry, something that catches the light. "Wear it. Next week we're going to China. I want you to see where I'm from." You're still reeling when he pushes a second box toward you. Inside: a Rolex. "So you're never late for me." He says it like a joke, but his eyes are serious. You laugh, flustered, and he leans back, satisfied. "You're worth it, Lina."
+
+[[Play again->IntroductionScreen]]
 (set: $timesChoseRolex to $timesChoseRolex + 1)(set: $completionCount to $completionCount + 1)(set: $lastPassage to "EpilogueRolex")(set: $choseThisRun to "rolex")
 (display: "SendData")
-<i>2/14 - Valentine's Day!</i>
-
-You chose to spend time with Rolex! (More content coming soon.)
-
-[[Play again->PlayAgain]]
 
 :: EpilogueAlone {"position":"1100,475","size":"100,100"}
-(set: $timesAlone to $timesAlone + 1)(set: $completionCount to $completionCount + 1)(set: $lastPassage to "EpilogueAlone")(set: $choseThisRun to "alone")
-(display: "SendData")
 <i>2/14 - Valentine's Day...</i>
 
 You spend Valentine's by yourself. No letters, no dates. Just you and a tub of ice cream. (Or maybe next playthrough you'll be sweeter to someone!)
 
-[[Play again->PlayAgain]]
-
-:: PlayAgain
-(set: $replayCount to $replayCount + 1)
-[[Back to title->IntroductionScreen]]
+[[Play again->IntroductionScreen]]
+(set: $timesAlone to $timesAlone + 1)(set: $completionCount to $completionCount + 1)(set: $lastPassage to "EpilogueAlone")(set: $choseThisRun to "alone")
+(display: "SendData")
 
 :: SendData
 <div id="analytics-payload" style="display:none">
